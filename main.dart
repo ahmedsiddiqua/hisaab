@@ -17,18 +17,56 @@ class MyApp extends StatelessWidget {
       title: 'Hisaab',
       theme: ThemeData(
         brightness: Brightness.dark,
-        fontFamily: 'Moldern', // keep your font
+        useMaterial3: true,
+        fontFamily: 'Moldern',
+        scaffoldBackgroundColor: Color(0xFF0D1117), // GitHub dark
         colorScheme: ColorScheme.dark(
-          primary: Color(0xFF3D4C3A), // deep olive green for premium feel
-          secondary: Color(0xFFC2B280), // soft gold accent
+          primary: Color(0xFF00D084), // Terminal green
+          secondary: Color(0xFF58A6FF), // Terminal blue
+          surface: Color(0xFF161B22),
+          onSurface: Color(0xFFE6EDF3),
         ),
         appBarTheme: AppBarTheme(
-          backgroundColor: Color(0xFF3D4C3A), // same deep green
-          foregroundColor: Color(0xFFF5F5F5), // off-white for contrast
+          backgroundColor: Color(0xFF161B22),
+          foregroundColor: Color(0xFF00D084),
+          elevation: 0,
+          centerTitle: false,
         ),
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Color(0xFFC2B280), // gold accent
-          foregroundColor: Colors.black87,
+          backgroundColor: Color(0xFF00D084),
+          foregroundColor: Color(0xFF0D1117),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: Color(0xFF161B22),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(color: Color(0xFF30363D), width: 1),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(color: Color(0xFF30363D), width: 1),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(color: Color(0xFF00D084), width: 2),
+          ),
+          labelStyle: TextStyle(color: Color(0xFF8B949E)),
+          hintStyle: TextStyle(color: Color(0xFF6E7681)),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Color(0xFF00D084),
+            foregroundColor: Color(0xFF0D1117),
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            textStyle: TextStyle(fontWeight: FontWeight.w600),
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(foregroundColor: Color(0xFF58A6FF)),
         ),
       ),
       home: FriendListPage(),
